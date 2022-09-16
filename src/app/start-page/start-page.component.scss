@@ -1,0 +1,114 @@
+:host-context(.night-theme) {
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #0C0C08;
+        z-index: -1;
+    }
+
+    .wrapper {
+        hr {
+            border: 1px solid #5B6D7E;
+        }
+
+        .logo,
+        .slogan {
+            color: #5B6D7E;
+        }
+
+        .text {
+            color: #fff;
+        }
+
+        .start {
+            background: #5B6D7E;
+        }
+    }
+
+    select {
+        background: #5B6D7E;
+    }
+}
+
+.wrapper {
+    text-align: center;
+    margin: auto 34px;
+
+    hr {
+        border: 1px solid #93C2ED;
+        margin: 24px;
+    }
+
+    .line-degree {
+        margin: 30px 24px;
+        transform: rotate(-4deg);
+    }
+
+    .logo {
+        font-family: 'Waiting for the Sunrise';
+        font-style: normal;
+        font-weight: 300;
+        line-height: 80px;
+        font-size: 80px;
+        color: #93C2ED;
+        margin: 32px auto;
+    }
+
+    .slogan {
+        font-family: 'Vollkorn';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 39px;
+        color: #93C2ED;
+        text-align: right;
+    }
+
+    .text {
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 28px;
+        color: #716868;
+    }
+
+    .start {
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 42px;
+        color: #FFFFFF;
+
+        background: #93C2ED;
+        border: none;
+        padding: 16px 38px;
+        margin: 20px auto;
+
+        &:hover {
+            background: #7297b9;
+        }
+    }
+}
+
+select {
+    border: 0;
+    outline: 0;
+
+    font-size: 20px;
+    width: auto;
+    padding: 5px;
+    color: white;
+    border-radius: 0.25em;
+    cursor: pointer;
+    background: #7297b9;
+
+    /* Remove focus outline */
+    &:focus {
+        outline: none;
+    }
+}

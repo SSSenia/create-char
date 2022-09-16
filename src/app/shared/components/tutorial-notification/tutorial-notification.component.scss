@@ -1,0 +1,38 @@
+.wrapper {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+
+    .text {
+        margin: 9px 8px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 35px;
+        color: #716868;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    button {
+        align-self: flex-end;
+        padding: 4px 16px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    :host-context(.night-theme) {
+        .text {
+            color: #fff;
+        }
+
+        button {
+            background: #5B6D7E;
+        }
+    }
+
+}

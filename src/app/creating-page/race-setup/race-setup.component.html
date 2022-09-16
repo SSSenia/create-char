@@ -1,0 +1,13 @@
+<div class="question">{{'CREATING_PAGE.Choose' | translate}}<strong>{{'CREATING_PAGE.Race' | translate}}</strong>{{'CREATING_PAGE.From' | translate}}</div>
+<form [formGroup]="form" (ngSubmit)="submit()" >
+    <div class="radio-button" *ngFor="let race of races">
+        <input type="radio" formControlName="race" [id]="race" [value]="race">
+        <label [for]="race">{{"RACES."+race | translate}}</label>
+    </div>
+    <div class="submit">
+        <button class="submit-button" type="submit" [disabled]="!form.controls['race'].value">
+            <span>{{'BUTTONS.Next' | translate}}&nbsp;</span>
+            <span class="material-icons">arrow_forward</span>
+        </button>
+    </div>
+</form>

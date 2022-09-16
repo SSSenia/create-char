@@ -1,0 +1,19 @@
+<div class="background" [style]="{'background': (currentTheme$ | async)!.background}">
+    <img *ngIf="currentCharacter$ | async as character"
+        [src]="'./assets/img/'+character.race+'/'+ character.class + '.png'"
+        alt="character">
+</div>
+
+<div class="notifications">
+    <div class="tutorial-notification" *ngIf="currentTutorialNotificatin$ | async as tutorialNotification">
+        <app-tutorial-notification *ngIf="tutorialNotification.length" [notification]="tutorialNotification"></app-tutorial-notification>
+    </div>
+    
+    <div class="comment-notification" *ngIf="currentCommentNotificatin$ | async as commentNotificatin">
+        <app-comment-notification *ngIf="commentNotificatin.length" [notification]="commentNotificatin"></app-comment-notification>
+    </div>
+</div>
+
+<div class="setup">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,18 @@
+<div class="question">{{'CREATING_PAGE.Choose' | translate}}<strong>{{'CREATING_PAGE.Class' |
+        translate}}</strong>{{'CREATING_PAGE.From' | translate}}</div>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="radio-button" *ngFor="let class of classes">
+        <input type="radio" formControlName="class" [id]="class" [value]="class">
+        <label [for]="class">{{"CLASSES." + class | translate}}</label>
+    </div>
+    <div class="submit">
+        <button [routerLink]="['/create', 'race']">
+            <span class="material-icons">arrow_back</span>
+            <span>&nbsp;{{'BUTTONS.Back' | translate}}</span>
+        </button>
+        <button type="submit" [disabled]="!form.controls['class'].value">
+            <span>{{'BUTTONS.Next' | translate}}&nbsp;</span>
+            <span class="material-icons">arrow_forward</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+.setup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.25);
+    padding: 23px;
+    background-color: white;
+}
+
+:host-context(.night-theme) {
+    .setup, .tutorial-notification{
+        background: #0C0C08;
+    }
+}
+
+img {
+    width: 100vw;
+    height: calc(100vh - 272px);
+    object-fit: cover;
+}
+.notifications{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+}
+.tutorial-notification {
+    background: #FFF9F9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.comment-notification {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

@@ -1,0 +1,65 @@
+{
+    "test": "testMy",
+    "START_PAGE": {
+        "Slogan": "“not trivial slogan”",
+        "introduction1": "Today I will teach you how to create a character in computer games",
+        "introduction2": "I'm sure you already know how but can you create a character creator?",
+        "Start": "Lets start"
+    },
+    "CREATING_PAGE":{
+        "Choose": "Choose a ",
+        "Race": "race",
+        "Class": "class",
+        "From": " from the options:",
+        "Theme": "Theme: ",
+        "Background": "Background:"
+    },
+    "END_PAGE":{
+        "WellDone": "Well done!",
+        "end1": "Think of a nickname",
+        "end2": "Keep it in your mind",
+        "end3": "Oh, I almost forgot... to start playing - contact Kiy ;)",
+        "Again": "Go again"
+    },
+    "BUTTONS": {
+        "Next": "Next",
+        "Back": "Back",
+        "Save": "Save",
+        "GotIt": "Got it"
+    },
+    "RACES": {
+        "Human": "Human",
+        "Elf": "Elf",
+        "Dwarf": "Dwarf"
+    },
+    "CLASSES": {
+        "Warrior": "Warrior",
+        "Dude with bow": "Dude with bow",
+        "Mage": "Mage"
+    },
+    "THEMES": {
+        "Day": "Day",
+        "Night": "Night"
+    },
+    "NOTIFICATION":{
+        "race1": "The first:",
+        "race2": "Race",
+        "race3": "Everyone is crazy about it now...",
+        "class1": "The second:",
+        "class2": "Class",
+        "class3": "Second but not least",
+        "settings1": "Left a little just choose ",
+        "settings2": "settings",
+        "end-Warrior-Dwarf": "Okay, glad we both chose a warrior dwarf :3",
+        "end-Warrior-Human": "\"Original\"",
+        "comment-Human-None1": "Seriously?",
+        "comment-Human-None2": "Human?",
+        "comment-Human-None3": "You are human in real life...",
+        "comment-Elf-None1": "Elf?",
+        "comment-Elf-None2": "Are you gay?",
+        "comment-Dwarf-None": "Good choice.",
+        "comment-Human-Warrior": "\"Original\"",
+        "comment-Dwarf-Warrior": "Classic",
+        "comment-Dwarf-Mage": "LOL really?"
+    }
+}

@@ -1,0 +1,26 @@
+<div class="background"></div>
+<div class="wrapper">
+    <div class="logo">COOL LOGO</div>
+    <div class="slogan">
+        {{ 'START_PAGE.Slogan' | translate}}
+    </div>
+    <hr>
+    <div class="text">
+        {{ 'START_PAGE.introduction1' | translate}}
+    </div>
+    <hr class="line-degree">
+    <div class="text">
+        {{ 'START_PAGE.introduction2' | translate}}
+    </div>
+    <hr>
+    <form [formGroup]="form">
+        <select formControlName="lang" class="select-lang">
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+        </select>
+    </form>
+
+    <button class="start" [routerLink]="['/create']">
+        {{ 'START_PAGE.Start' | translate}}
+    </button>
+</div>

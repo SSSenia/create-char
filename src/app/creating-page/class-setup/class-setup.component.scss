@@ -1,0 +1,107 @@
+.question {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    color: #716868;
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+:host-context(.night-theme) {
+    .question {
+        color: #FFFFFF;
+    }
+
+    form .submit button {
+        background: #5B6D7E;
+    }
+
+    .radio-button {
+        label {
+            color: #FFFFFF;
+        }
+
+        label:before {
+            border: 2px solid #FFFFFF;
+        }
+
+        input[type=radio]:checked+label:after {
+            background: #FFFFFF;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+
+    .radio-button {
+        display: flex;
+        margin: 19px 19px auto 0;
+        position: relative;
+
+        input[type='radio'] {
+            display: none;
+        }
+
+        label:before {
+            content: " ";
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            left: -4px;
+            margin: 0 5px 0 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 11px;
+            border: 2px solid #716868;
+            background-color: transparent;
+        }
+
+        input[type=radio]:checked+label:after {
+            border-radius: 11px;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 9px;
+            left: 10px;
+            content: " ";
+            display: block;
+            background: #716868;
+        }
+
+
+        label {
+            margin-left: 10px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+            color: #716868;
+        }
+    }
+
+    .submit {
+        margin-top: 21px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            display: flex;
+            background: #93C2ED;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+            color: #FFFFFF;
+            padding: 4px 10px;
+            border: none;
+            align-items: center;
+        }
+    }
+}

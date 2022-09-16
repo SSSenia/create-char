@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="theme">
+        <div class="name">
+            {{"CREATING_PAGE.Theme" | translate}}
+        </div>
+        <div class="choice-theme">
+            <div class="radio-button" *ngFor="let theme of themes">
+                <input type="radio" formControlName="theme" [id]="theme" [value]="theme">
+                <label [for]="theme">{{"THEMES." + theme | translate}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="background" *ngIf="theme | async as currentTheme">
+        <div class="left">
+            <div class="name">
+                {{"CREATING_PAGE.Background" | translate}}
+            </div>
+            <button class="save" type="submit">
+                <span>{{"BUTTONS.Save" | translate}}&nbsp;</span>
+                <span class="material-icons-outlined">brightness_5</span>
+            </button>
+        </div>
+        <div [cpWidth]="'191px'" [cpAlphaChannel]="'disabled'" [cpToggle]="true" [cpDialogDisplay]="'inline'"
+            [(colorPicker)]="color" (colorPickerChange)="onChangeColor()"></div>
+    </div>
+</form>
