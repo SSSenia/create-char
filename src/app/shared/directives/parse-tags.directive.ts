@@ -1,11 +1,14 @@
-import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { IStringWithTag } from '../interfaces/account';
 
 @Directive({
   selector: '[appParseTags]'
 })
-export class ParseTagsDirective implements OnChanges {
+export class ParseTagsDirective implements OnInit, OnChanges, OnDestroy {
+
+  subscribtionToLangChange!: Subscription;
 
   @Input('appParseTags') array: IStringWithTag[][] = [];
 
@@ -15,32 +18,44 @@ export class ParseTagsDirective implements OnChanges {
     private translateService: TranslateService
   ) { }
 
-  parseData() {
+  clearElement() {
     const paragraphs = this.elementRef.nativeElement.children;
-    for (var i = paragraphs.length; i--; ){
-      paragraphs[i].remove()
+    for (var i = paragraphs.length; i--;) {
+      paragraphs[i].remove();
+    }
   }
 
+  parseElement() {
+    this.clearElement();
+
     for (const row of this.array) {
-      const header = this.renderer.createElement('p')
+      const header = this.renderer.createElement('p');
       for (const column of row) {
         let content;
 
         if (column.strong) {
           content = this.renderer.createElement('strong')
-          const text = this.renderer.createText(this.translateService.instant("NOTIFICATION."+column.text))
-          this.renderer.appendChild(content, text)
+          const text = this.renderer.createText(this.translateService.instant("NOTIFICATION." + column.text));
+          this.renderer.appendChild(content, text);
         }
-        else content = this.renderer.createText(this.translateService.instant("NOTIFICATION."+column.text))
+        else content = this.renderer.createText(this.translateService.instant("NOTIFICATION." + column.text));
 
-        this.renderer.appendChild(header, content)
+        this.renderer.appendChild(header, content);
       }
       this.renderer.appendChild(this.elementRef.nativeElement, header);
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.parseData();
+  ngOnInit(): void {
+    this.subscribtionToLangChange = this.translateService.onLangChange
+      .subscribe(() => this.parseElement())
   }
 
+  ngOnChanges(): void {
+    this.parseElement();
+  }
+
+  ngOnDestroy(): void {
+    this.subscribtionToLangChange.unsubscribe();
+  }
 }
