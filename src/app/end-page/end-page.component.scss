@@ -13,6 +13,7 @@
         hr {
             border: 1px solid #5B6D7E;
         }
+
         .logo {
             color: #5B6D7E;
         }
@@ -23,6 +24,10 @@
 
         .start {
             background: #5B6D7E;
+
+            &:hover {
+                background: #8098af;
+            }
         }
     }
 }

@@ -32,6 +32,10 @@
 
         button {
             background: #5B6D7E;
+
+            &:hover {
+                background: #8098af;
+            }
         }
     }
 
